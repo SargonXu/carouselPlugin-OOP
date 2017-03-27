@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>轮播图</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		li{
+			list-style: none;
+		}
+		.clearflex::before,.clearflex::after{
+			display: block;
+			content: "";
+			height: 0px;
+			overflow: hidden;
+			clear: both;
+		}
+		#carousel{
+			width: 100%;
+			height: 120px;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+		}
+		#carousel ul{
+			height: 120px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#carousel li{
+			height: 120px;
+			line-height: 120px;
+			float: left;
+		}
+		.carousel-controller{
+			width: 40px;
+			height: 60px;
+			line-height: 60px;
+			font-size: 20px;
+			background: rgba(125, 125, 125, .7);
+			color: rgba(255,255,255,1.0);
+			position: absolute;
+			top: 30px;
+			z-index: 9;
+			cursor: pointer;
+		}
+		div.carousel-controller:nth-of-type(1){
+			left: 0px;
+		}
+		div.carousel-controller:nth-of-type(2){
+			right: 0px;
+		}	
+	</style>
+</head>
+<body>
+	<div id="carousel">
+		<ul class="clearflex">
+			<li style="background-color:red;">1</li>
+			<li style="background-color:yellow;">2</li>
+			<li style="background-color:blue;">3</li>
+			<li style="background-color:green;">4</li>
+		</ul>
+		<div class="carousel-controller"><<</div>
+		<div class="carousel-controller">>></div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+	<script>
+		var carousel = new Carousel();
+		carousel.run();
+	</script>
+</body>
+</html>
